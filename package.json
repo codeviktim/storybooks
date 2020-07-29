@@ -1,0 +1,11 @@
+{
+  "name": "storybooks",
+  "version": "1.0.0",
+  "description": "An application to share public stories and write private stories",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "codez4life",
+  "license": "MIT"
+}
