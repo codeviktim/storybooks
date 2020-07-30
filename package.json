@@ -2,10 +2,17 @@
   "name": "storybooks",
   "version": "1.0.0",
   "description": "An application to share public stories and write private stories",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "author": "codez4life",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "mongoose": "^5.9.26",
+    "passport": "^0.4.1"
+  }
 }
