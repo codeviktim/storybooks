@@ -1,5 +1,7 @@
 if (process.env.NODE_ENV === "production") {
-  module.exports = require("./keys_prod");
+  module.exports = {
+    MONGODB_URL: process.env.MONGODB_URL,
+  };
 } else {
   module.exports = require("./keys_dev");
 }

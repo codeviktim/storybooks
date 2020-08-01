@@ -4,18 +4,21 @@ const passport = require("passport");
 //const path = require("path");
 
 const app = express();
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").MONGODB_URL;
 require("./config/passport")(passport);
 
 //load routes
 const auth = require("./routes/api/auth");
 
 app.use("/api/auth", auth);
+//Map global promises
+mongoose.Promise = global.Promise;
+
 //db connection
 mongoose
   .connect(db, {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
+    useNewUrlParser: true,
   })
   .then(() => console.log("DB connection successful"))
   .catch((err) => console.log(err));
