@@ -1,5 +1,5 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET} = require("./keys");
+const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = require("./keys");
 
 //Load user model
 const User = require("../models/User");
@@ -31,7 +31,7 @@ module.exports = function (passport) {
         //Check if user exists
         User.findOne({ googleID: profile.id }).then((user) => {
           if (user) {
-            //Return user
+            //Return user 
             done(null, user);
           } else {
             //Create user
@@ -41,4 +41,7 @@ module.exports = function (passport) {
       }
     )
   );
+  passport.deserializeUser((id, done) => {
+    User.findById(id).then((user) => done(null, user));
+  });
 };
