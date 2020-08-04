@@ -1,4 +1,3 @@
 node_modules
 
-#comfig folder
-/config/keys_dev
+config/keys_dev
